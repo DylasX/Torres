@@ -1,0 +1,88 @@
+<div class="container">
+
+<h2><form class="form-signin"  method="post">Llene los campos</h2></form>
+
+
+  <%= form_for @torre do |t| %>
+  <div class="row">
+
+
+    <div class="col-md-4">
+
+
+
+    </div>
+    <div class="col-md-4">
+
+      <%= t.text_field :nombre,:placeholder => "Nombre", :class => "form-control col-sm-2"%>
+
+
+    </div>
+    <div class="col-md-4">
+
+
+
+    </div>
+
+
+  </div><br><br>
+
+<div class="row">
+
+  <div class="col-md-4">
+
+
+
+  </div>
+  <div class="col-md-4">
+
+    <%= t.text_field :portero,:placeholder => "Portero", :class => "form-control col-sm-2"%>
+
+
+  </div>
+  <div class="col-md-4">
+
+
+
+  </div>
+
+
+  </div>
+
+<br><br>
+  <div class="row">
+
+    <div class="col-md-4">
+
+
+
+    </div>
+    <div class="col-md-4">
+
+          <center><%= t.submit 'Guardar', class:"btn btn-large btn-primary"%>
+          <%=link_to '<button type="button" class="btn btn-large btn-primary">Regresar</button>'.html_safe, torres_path%>
+        </center>
+
+
+
+
+
+    </div>
+    <div class="col-md-4">
+
+
+    </div>
+
+
+
+
+  </div>
+
+    <% end %>
+
+
+
+
+
+
+</div>

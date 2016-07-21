@@ -1,0 +1,91 @@
+
+<div class="container">
+
+<h2><form class="form-signin"  method="post">Llene los campos</h2></form>
+
+
+<%= form_for [@apto.torre, @apto] do |a| %>
+  <div class="row">
+
+
+    <div class="col-md-4">
+
+
+
+    </div>
+    <div class="col-md-4">
+
+      <%= a.text_field :nombre,  :placeholder => "Nombre", :class => "form-control col-sm-2"%> <br>
+
+
+    </div>
+    <div class="col-md-4">
+
+
+
+    </div>
+
+
+  </div><br><br>
+
+<div class="row">
+
+  <div class="col-md-4">
+
+
+
+  </div>
+  <div class="col-md-4">
+
+    <%= a.text_field :piso, :placeholder => "Piso", :class => "form-control col-sm-2" %> <br>
+
+
+  </div>
+  <div class="col-md-4">
+
+
+
+  </div>
+
+
+  </div>
+
+<br><br>
+  <div class="row">
+
+    <div class="col-md-4">
+
+
+
+    </div>
+    <div class="col-md-4">
+
+          <center>  <%=a.collection_select :torre_id, Torre.all, :id, :nombre,{}, {class: "form-control"}%><br>
+            <%= a.submit 'Guardar',  class:"btn btn-large btn-primary"%>
+
+          <%=link_to '<button type="button" class="btn btn-large btn-primary">Regresar</button>'.html_safe, torres_path%>
+        </center>
+
+
+
+
+
+    </div>
+    <div class="col-md-4">
+
+
+    </div>
+
+
+
+
+  </div>
+
+    <% end %>
+
+
+
+
+
+
+</div>

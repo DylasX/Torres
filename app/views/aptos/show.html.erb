@@ -1,0 +1,11 @@
+<h1>Apartamento: <%=@apto.nombre %></h1>
+<h1>Piso: <%=@apto.piso %> </h1>
+<p></p><br>
+
+<center>
+<%=link_to '<i class="fa fa-pencil fa-3x"></i>'.html_safe, edit_torre_apto_path(@apto.torre, @apto) %>
+<%=link_to '<i class="fa fa-users fa-3x"></i>'.html_safe, torre_apto_personas_path(@torre, @var2) %>
+<%= link_to '<i class="fa fa-remove fa-3x"></i>'.html_safe, @aptos, method: :delete, data: {confirm: "Are you sure?"} %>
+<br><br>
+<%=link_to '<i class="fa fa-reply fa-3x"></i>'.html_safe, torre_path(@torre)%>
+</center>

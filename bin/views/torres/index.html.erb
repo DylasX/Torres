@@ -1,0 +1,19 @@
+
+
+<h1>List of towers</h1>
+<%=link_to "New tower", new_tower_path%>
+
+			<il>
+				<% @torres.each do |torre| %>
+						<h3>Nombre</h3>
+						<%= torre.nombre %><br>
+						<h3>Portero</h3>
+						<%= torre.portero %><br>
+						<%=link_to "Details", torre_path(torre) %> <!--Las rutas están dada por las rutas de afueras en rake routes -->
+						<%=link_to "Edit torre", edit_torre_path(torre)%>
+						<%= link_to "Delete", torre, method: :delete, data: {confirm: "Are you sure?"} %>
+
+
+					</li>
+				<% end %>
+			</il>

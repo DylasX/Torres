@@ -1,0 +1,34 @@
+<div class="header">
+	<h1>Lista de torres</h1>
+</div>
+			<div class="container">
+
+				<%=link_to '<i class="fa fa-plus fa-3x"></i>'.html_safe, new_torre_path%>
+
+				<table class="table table-hover">
+					<thead>
+						<tr>
+
+								<th><h3>Nombre </h3></th>
+								<th><h3>Portero </h3></th>
+					</tr>
+
+					</thead>
+					<tbody>
+
+				<% @torres.each do |torre| %>
+					<tr>
+
+
+					<td><%= torre.nombre %></td>
+					<td><%= torre.portero %></td>
+					<td><%=link_to '<i class="fa fa-pencil fa-3x"></i>'.html_safe, edit_torre_path(torre)%></td>
+					<td><%=link_to '<i class="fa fa-info fa-3x"></i>'.html_safe, torre_path(torre) %></td>
+					<td><%= link_to '<i class="fa fa-remove  fa-3x aria-hidden="true" "></i>'.html_safe, torre, method: :delete, data: {confirm: "Are you sure?"} %></td>
+
+
+
+				</tr>
+				<% end %>
+
+			</table>

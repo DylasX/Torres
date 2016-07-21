@@ -1,0 +1,38 @@
+
+<div class="header">
+  <h1>Habitantes del apartamento:  <%= @apto.nombre %></h1>
+</div>
+
+	<div class="container">
+
+<%=link_to'<i class="fa fa-plus fa-3x"></i>'.html_safe, new_torre_apto_persona_path(@torre, @apto)%>
+
+
+				<table class="table table-hover">
+					<thead>
+						<tr>
+
+								<th><h3>Nombre </h3></th>
+								<th><h3>Identificación </h3></th>
+					</tr>
+
+					</thead>
+					<tbody>
+
+<% @personas.each do |persona| %>
+    <tr>
+
+    <td><%= persona.nombre %><td>
+    <td><%= persona.identificacion %><td>
+    <td><%= link_to '<i class="fa fa-remove  fa-3x aria-hidden="true" "></i>'.html_safe,  (@persona), method: :delete, data: {confirm: "Are you sure?"} %><td>
+    <td><%=link_to  '<i class="fa fa-pencil fa-3x"></i>'.html_safe, edit_torre_apto_persona_path(@torre, @apto, persona)%><td>
+
+
+
+
+
+
+				</tr>
+				<% end %>
+
+			</table>

@@ -1,0 +1,9 @@
+<h1>Añadir habitante</h1>
+<%= form_for  [@torre, @apto, @persona] do |f| %>
+<%=f.label :nombre %>
+<%=f.text_field :nombre %>
+<%=f.label :identificacion %>
+<%=f.text_field :identificacion %>
+<%=f.collection_select :apto_id, Apto.all, :id, :nombre%>
+<%=f.submit %>
+<%end%>

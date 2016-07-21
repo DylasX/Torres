@@ -1,0 +1,20 @@
+
+<h1>editemos pues</h1>
+
+<%= form_for [@torre, @apto, @persona] do |a| %>
+
+<p>
+  <%= a.label :nombre %> <br>
+  <%= a.text_field :nombre %> <br>
+  <%= a.label :identificacion %> <br>
+  <%= a.text_field :identificacion %> <br>
+  <%=a.collection_select :apartamento_id, Apto.all, :id, :nombre%>
+
+
+</p>
+
+<p>
+<%= a.submit %>
+</p>
+
+<% end %>
